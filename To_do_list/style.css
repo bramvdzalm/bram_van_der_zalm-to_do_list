@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+}
+html {
+    width: 420px;
+}
+
+body {
+    background-color: lightgray
+}
+
+.todo-form {
+    width: 420px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding-top: 2rem;
+}
+.todo-input {
+    width: 250px;
+}
+.task-list {
+    width: 420px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.todo-div {
+    width: 400px;
+    height: 20px;
+    background-color: white;
+    margin: 3px;
+    display: grid;
+    grid-template-columns: 2fr 0.1fr 0.1fr;
+}
+
+.todo-par {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.green-background {
+    background-color: chartreuse;
+}
+.line-through {
+    text-decoration: line-through;
+}
+
+
+
