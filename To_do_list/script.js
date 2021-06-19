@@ -4,6 +4,7 @@ const toDoList = document.querySelector('.task-list')
 const toDoForm = document.querySelector('.todo-form')
 
 const addToDoList = async() => {
+    toDoList.innerHTML = ""
     const data = await getData();
     const getTodo = data.map((item) => {
         addToDo(item);
@@ -34,7 +35,7 @@ const addToDo = (item) =>  {
     const trashButton = document.createElement('button')
     trashButton.innerHTML = '<i class="fas fa-trash"></i>'
     trashButton.classList.add('trash-button')
-    trashButton.addEventListener('click', deleteData) 
+    trashButton.addEventListener('click', () => {deleteData(item._id), addToDoList()}) 
 
     toDoList.insertAdjacentElement("afterbegin", todoDiv);
 
@@ -52,12 +53,19 @@ const postNewTodo = async() => {
         const post = await postData(item)
     
         const data = await getData();
+
+        addToDoList()
     });
     
 };
 postNewTodo();
 
 
+// Hi Stijn, top dankjewel voor je feedback, daar sta ik altjd voor open. Dat is eigenlijk ook
+// het enige wat ik aan de opleiding mis. Het live sparren met elkaar en gedachtengang delen.
+// Op de een of andere manier hoefde ik hier niet te vernieuwen om de zojuist toegevoegde taak tevoorschijn te toveren.
+// En zo dus ook met de Delete button, ben benieuwd of ik het nu wel juist heb toegepast.
+// Als ik in de button op het prullenbakje klikte, pakte hij hem niet, maar op de button naast het prullenbakje wel.
 
 
 

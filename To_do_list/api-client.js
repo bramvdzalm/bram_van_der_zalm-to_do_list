@@ -36,11 +36,13 @@ const postData = async(data) => {
     }
 }
 
-const deleteData = async() => {
-    const taskId = event.target.parentNode.id
+const deleteData = async(id) => {
     try {
-        const res = await fetch( apiUrl + taskId, {
-                method: "DELETE"
+        const res = await fetch( apiUrl + id, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
         }
         );
         if (res.ok) {
